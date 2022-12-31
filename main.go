@@ -1,32 +1,18 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
-	"io/ioutil"
+	"io"
+	"log"
+	"net/http"
 )
 
-type Data struct {
-	Data []Music
-}
-type Music struct {
-	Id            string
-	Types         string
-	Relationships []Relation
-}
-type Relation struct {
-	Tracks []Track
-}
-type Track struct {
-	Href string
-}
-
 func main() {
-	raw, err := ioutil.ReadFile("./data.json")
-	_ = err
 
-	var d Data
-	json.Unmarshal(raw, &d)
+	helloHandler := func(w http.ResponseWriter, req *http.Request) {
+		io.WriteString(w, "Hello, World\n")
+	}
 
-	fmt.Println(d)
+	http.HandleFunc("/", helloHandler)
+	http.HandleFunc("/hello", helloHandler)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
