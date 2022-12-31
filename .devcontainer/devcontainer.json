@@ -10,7 +10,8 @@
 				"mhutchie.git-graph",
 				"donjayamanne.githistory",
 				"waderyan.gitblame",
-				"golang.go"
+				"golang.go",
+				"GitHub.vscode-pull-request-github"
 			]
 		}
 	},
