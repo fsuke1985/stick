@@ -7,7 +7,7 @@
     schemes:
       - "https"
     x-google-backend:
-      address: "https://api-backend.example.dev"
+      address: "https://stick2-5jeuytc7ia-an.a.run.app"
       path_translation: APPEND_PATH_TO_ADDRESS
     paths:
       "/":
