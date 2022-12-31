@@ -9,10 +9,11 @@
 			"extensions": [
 				"mhutchie.git-graph",
 				"donjayamanne.githistory",
-				"waderyan.gitblame"
+				"waderyan.gitblame",
+				"golang.go"
 			]
 		}
-	}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -21,7 +22,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "go version",
+	"postCreateCommand": "curl https://sdk.cloud.google.com | bash && exec $SHELL"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
