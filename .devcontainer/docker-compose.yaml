@@ -13,11 +13,11 @@ services:
     volumes:
       - ../..:/workspaces:cached
     command: sleep infinity
-    netowrk_mode: service:db
+    network_mode: service:db
 
   db:
     image: postgres:latest
-    restart: unless-stoped
+    restart: unless-stopped
     volumes:
       - postgres-data:/var/lib/postgresql/data
     env_file:

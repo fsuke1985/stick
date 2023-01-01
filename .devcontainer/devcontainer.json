@@ -4,7 +4,7 @@
 	"name": "Go & PostgreSQL",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	//"image": "mcr.microsoft.com/devcontainers/go:0-1-bullseye",
-	"dockerComposeFile": "docker-compose.yaml",
+	"dockerComposeFile": "./docker-compose.yaml",
 	"service": "devcontainer",
 	"workspaceFolder": "/workspaces/stick",
 	"customizations": {
@@ -26,7 +26,7 @@
 	"forwardPorts": [5432],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "curl https://sdk.cloud.google.com | bash && exec $SHELL"
+	"postCreateCommand": "gcloud auth login --cred-file gcp_credentials.json"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
