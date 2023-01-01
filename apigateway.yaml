@@ -27,3 +27,20 @@
                 type: string
             400:
               description: "The IATA code is invalid or missing."
+      "/hello":
+        get:
+          description: "Get the airport name for a given IATA code."
+          operationId: "hellow"
+          parameters:
+            -
+              name: iataCode
+              in: query
+              required: true
+              type: string
+          responses:
+            200:
+              description: "Success."
+              schema:
+                type: string
+            400:
+              description: "The IATA code is invalid or missing."
