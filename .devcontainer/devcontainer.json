@@ -1,9 +1,12 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/go
 {
-	"name": "Go",
+	"name": "Go & PostgreSQL",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/go:0-1-bullseye",
+	//"image": "mcr.microsoft.com/devcontainers/go:0-1-bullseye",
+	"dockerComposeFile": "docker-compose.yaml",
+	"service": "devcontainer",
+	"workspaceFolder": "/workspaces/stick",
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -20,7 +23,7 @@
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [5432],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "curl https://sdk.cloud.google.com | bash && exec $SHELL"
