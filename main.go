@@ -7,38 +7,35 @@ import (
 	"net/http"
 )
 
-type JsonStruct struct {
-	x string
-	y int
-	j []string
+type jsonstruct struct {
+	X string
+	Y int
+	J []string
 }
 
 func main() {
-
-	type JsonStruct struct {
-		x string
-		y int
-		j []string
-	}
 
 	helloHandler := func(w http.ResponseWriter, req *http.Request) {
 		io.WriteString(w, "Hello, World\n")
 	}
 
 	jsonHandler := func(w http.ResponseWriter, req *http.Request) {
-		jsons := JsonStruct{
-			x: "named",
-			y: 1,
-			j: []string{"a", "b", "c"},
+
+		w.Header().Add("Content-Type", "application/json charset=utf8")
+
+		jsons := &jsonstruct{
+			X: "named",
+			Y: 1,
+			J: []string{"a", "b", "c"},
 		}
+
 		i, err := json.Marshal(jsons)
 
-		_ = i
-
 		if err != nil {
-
+			panic(err)
 		}
 
+		io.WriteString(w, string(i))
 	}
 
 	http.HandleFunc("/", jsonHandler)
