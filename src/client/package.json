@@ -1,12 +1,17 @@
 {
   "scripts": {
-    "build": "echo 'build'"
+    "build": "echo 'build'",
+    "test": "jest"
   },
   "dependencies": {
+    "@jest/globals": "^29.3.1",
+    "@types/jest": "^29.2.5",
     "cross-env": "^7.0.3",
+    "jest": "^29.3.1",
     "next": "^13.1.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "ts-jest": "^29.0.3"
   },
   "name": "client",
   "version": "1.0.0",
