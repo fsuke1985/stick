@@ -10,6 +10,9 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive
 
 # cloud sdk install
 RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg  add - && apt-get update -y && apt-get install google-cloud-cli -y
+# nodejs lts install
+RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash - && apt install -y nodejs
+
 
 # [Optional] Uncomment the next lines to use go get to install anything else you need
 USER vscode
