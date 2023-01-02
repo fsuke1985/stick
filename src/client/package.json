@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "build": "echo 'build'"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "next": "^13.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "name": "client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fsuke1985/stick.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fsuke1985/stick/issues"
+  },
+  "homepage": "https://github.com/fsuke1985/stick#readme",
+  "description": ""
+}
