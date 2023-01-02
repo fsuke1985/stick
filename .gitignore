@@ -2,3 +2,4 @@ gcp_credentials.json
 node_modules
 src/client/yarn-error.log
 src/.DS_Store
+.next
