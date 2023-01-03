@@ -2,7 +2,7 @@ import Head from 'next/head'
 import useAppleMusicSWR from '../lib/hooks/useAppleMusicSWR'
 
 export default function Index() {
-    const { data, error } = useAppleMusicSWR({X: "name"} as AppleMusicApi)
+    const {mutate, data, error, isValidating, isLoading} = useAppleMusicSWR()
 
     return (
         <>
@@ -10,7 +10,14 @@ export default function Index() {
                 <title>pageIndex</title>
             </Head>
             <h1>pageIndex</h1>
-            { data.X }
+            <div>
+            {
+                data? data.map((props) => {
+                    <p>{props}</p>
+                })
+                : 'loading....'
+            }
+            </div>
         </>
     )
 }
