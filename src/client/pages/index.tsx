@@ -3,7 +3,7 @@ import useAppleMusicSWR from '../lib/hooks/useAppleMusicSWR'
 
 export default function Index() {
     const {mutate, data, error, isValidating, isLoading} = useAppleMusicSWR()
-
+console.log(data)
     return (
         <>
             <Head>
@@ -11,12 +11,12 @@ export default function Index() {
             </Head>
             <h1>pageIndex</h1>
             <div>
-            {
-                data? data.map((props) => {
-                    <p>{props}</p>
-                })
-                : 'loading....'
-            }
+                <p>
+                {
+                    isLoading? 'loading...' : data.X
+                }
+                </p>
+
             </div>
         </>
     )
