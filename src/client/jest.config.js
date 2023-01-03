@@ -15,6 +15,7 @@ const customJestConfig = {
     '^@/pages/(.*)$': '<rootDir>/pages/$1',
 
     '^@/hooks/(.*)$': '<rootDir>/lib/hooks/$1',
+    '^@/api/Apple/(.*)$': '<rootDir>/pages/api/Apple/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
 }
