@@ -27,7 +27,6 @@ on:
         perform_deploy:
           required: false
           type: boolean
-
 jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
@@ -40,5 +39,3 @@ jobs:
           LEVEL: ${{ inputs.logLevel }}
           TAGS: ${{ inputs.tags }}
           ENVIRONMENT: ${{ inputs.environment }}
-
-        
