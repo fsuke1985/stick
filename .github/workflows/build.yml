@@ -3,7 +3,7 @@ on:
       inputs:
         logLevel:
           description: 'Log level'
-          required: true
+          required: false
           default: 'warning'
           type: choice
           options:
@@ -19,30 +19,26 @@ on:
           type: environment
           required: false
         build_id:
-          required: true
+          required: false
           type: string
         deploy_target:
-          required: true
+          required: false
           type: string
         perform_deploy:
-          required: true
+          required: false
           type: boolean
 
 jobs:
-  deploy:
+  log-the-inputs:
     runs-on: ubuntu-latest
-    if: ${{ inputs.perform_deploy }}
     steps:
-      - name: Deploy build to target
       - run: |
           echo "Log level: $LEVEL"
           echo "Tags: $TAGS"
           echo "Environment: $ENVIRONMENT"
-          echo "build_id: $build_id"
-          echo "deploy_target: $deploy_target"
-          echo "perform_deploy: $perform_deploy"
         env:
           LEVEL: ${{ inputs.logLevel }}
           TAGS: ${{ inputs.tags }}
           ENVIRONMENT: ${{ inputs.environment }}
+
         
