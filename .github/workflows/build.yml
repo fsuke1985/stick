@@ -28,7 +28,7 @@ on:
           required: false
           type: boolean
 jobs:
-  log-the-inputs:
+  build:
     runs-on: ubuntu-latest
     steps:
       - run: |
@@ -45,3 +45,8 @@ jobs:
     steps:
       - run: |
           echo "deploy task exit"
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'The triggering workflow failed'
