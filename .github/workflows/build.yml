@@ -34,6 +34,6 @@ jobs:
     if: ${{ inputs.perform_deploy }}
     steps:
       - name: Deploy build to target
-      - run: echo "Log level"
+        run: echo "Log level"
 
         
