@@ -47,7 +47,7 @@ export default function Index({ indexprops }) {
 export async function getStaticProps() {
 
     const indexprops: IndexProps = {
-        CommitID: "f887sdfkl"
+        CommitID: process.env.COMMIT_ID
     };
 
     return {
