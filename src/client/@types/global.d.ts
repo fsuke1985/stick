@@ -3,3 +3,7 @@ type AppleMusicApi = {
     Y: number
     J: string[]
 }
+
+type IndexProps = {
+    CommitID: string
+}

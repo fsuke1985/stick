@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "echo 'build'",
+    "build": "next build",
+    "dev": "next dev",
     "test": "jest"
   },
   "dependencies": {
